@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="stylesheet" href="/style/style.css">
+
+    <link rel="icon" href="img/pokeball.png">
+    <link rel="stylesheet" href="style/startScreen.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 <body>
-    
+    <div id="startScreen">
+        <div id="startHeader">
+            <div id="startHeadline">
+                <img class="pokemonLogo" src="./img/pokemon_logo.jpg" alt="Pokemon Logo">
+                <div class="startNav">
+                        <div class="startButton1" onclick="init()"><img src="img/pokeball.png" class="startNavIcon" alt="pokeBall"><h3>Home Page</h3></div>
+                        <div class="startButton2" onclick="renderFavoritPokemons()"><img src="img/icons/heart_red.png" class="startNavIcon" alt="favoritIcon"><h3>Favorit</h3></div>
+                </div>    
+                    <form>
+                        <input id="startSearch" type="text" required placeholder="Pokémon suchen..." minlength="1">
+                    </form>
+                
+            </div>
+            <div id="startDesign"></div>
+        </div>
+        <div id="startContent">
+
+        </div>
+        <div id="startLoadMore">
+            <button onclick="loadMorePokemons()">Load More Pokémon</button>
+        </div>
+        <div id="startFooter">
+            <p>POKÉDEX made by MCS90</p>
+        </div>
+    </div>
+
     <script src="script/script.js"></script>
 </body>
 </html>

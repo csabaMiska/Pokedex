@@ -1,0 +1,330 @@
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+/* Start Screen Section */
+
+#startScreen {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+#startHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 16%;
+    background-color: rgb(34, 34, 34);
+}
+
+#startHeadline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 80px;
+}
+
+.pokemonLogo {
+    height: 130px;
+    padding: 8px;
+    z-index: 2;
+}
+
+.startNav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: white;
+}
+
+.startButton1 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.startButton2 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.startNavIcon {
+    width: 40px;
+}
+
+.startButton1:hover {
+    cursor: pointer;
+    text-shadow: 3px 3px 2px rgb(39, 116, 186);
+}
+
+.startButton2:hover {
+    cursor: pointer;
+    text-shadow: 3px 3px 2px rgb(39, 116, 186);
+}
+
+.startButton1:hover img {
+    animation: vibrate-1 0.3s linear infinite both;
+}
+
+@-webkit-keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  @keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  
+
+.startButton2:hover img {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  @keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  
+
+#startDesign {
+    background-color: white;
+    margin-top: -40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 40px;
+    position: sticky;
+    top: 130px;
+}
+
+#startSearch {
+    width: 300px;
+    height: 30px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    padding-left: 16px;
+    color: rgb(34, 34, 34);
+    background-color: white;
+    border-radius: 40px;
+    border: 4px solid rgb(255, 204, 1);
+}
+
+#startSearch:focus {
+    outline: 4px solid rgb(39, 116, 186);
+}
+
+#startContent {
+    background-color: white;
+    margin-top: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: normal;
+}
+
+#startLoadMore {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 20px;
+    height: 100px;
+}
+
+#startFooter {
+    background-color: rgb(34, 34, 34);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.startCard {
+    height: 280px;
+    width: 280px;
+    box-sizing: border-box;
+    margin: 8px;
+    border-radius: 40px;
+}
+
+.startCard:hover {
+    cursor: pointer;
+}
+
+.startCardIdContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-top: 8px;
+    padding-right: 20px;
+}
+
+.startCardId {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.startCardHeadlineContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.startCardHeadline {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.startCardTypesAndImage {
+    display: flex;
+    justify-content: space-between;
+    height: 65%;
+}
+
+.startCardTypesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.startCardImageContainer {
+    width: 50%;
+}
+
+.startCardImage {
+    height: 100%;
+    width: 90%;
+}
