@@ -6,6 +6,9 @@ let loadedPokemons = [];
 
 // Globale Variabels for Render Places
 let startContent = document.getElementById('startContent');
+let pokemonCardContainer = document.getElementById('pokemonCardContainer');
+let pokemonCard = document.getElementById('pokemonCard');
+let pokemonCardNav = document.getElementById('pokemonCardNav');
 
 // Loading API und JSON
 async function loadPokemons(i) { // Loading Current Pokemon

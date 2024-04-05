@@ -16,3 +16,9 @@ function generateStartCardsHTML(startPokemonId, startPokemonName, startPokemonIm
                 </div>
             </div>`
 } 
+
+// Pokemon Card Templates
+function generatePokemonCardNav(favoritId) {
+    return `<img src="img/icons/back.png" onclick="hidePokemonCard()" class="pokemonCardIcon" alt="backbutton">
+            <img src="img/icons/heart_white.png" onclick="addToFavorit(${favoritId})" id="favoritIcon${favoritId}"class="pokemonCardIcon" alt="favoritbutton">`;
+}
