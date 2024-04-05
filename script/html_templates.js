@@ -63,3 +63,30 @@ function generatePokemonCardInfoTable() {
                 </table>
             </div>`
 }
+
+function generatePokemonBaseStats(baseStatsName, baseStatsValue, i) {
+    return `<div id="pokemonProgressBar">
+                <span class="statsName">${capitalizeFirstLetter(baseStatsName.replace('special-attack', 'Sp. Atk').replace('special-defense', 'Sp. Def'))}</span>
+                <span class="statsValue">${baseStatsValue}</span>
+                <div id="progressBarContainer">
+                    <div id="progressBar${i}"></div>
+                </div>
+            </div>`
+}
+
+function generateTotalProgressBar(sum) {
+    return `<div id="pokemonProgressBar">
+                <span class="statsName">Total</span>
+                <span id="statsTotalValue" class="statsValue">${sum}</span>
+                <div id="progressBarContainer">
+                    <div id="TotalProgressBar"></div>
+                </div>
+            </div>`
+}
+
+function generateFlavorText(flavorText) {
+    return `<div class="flavorBox">
+                <div class="flavorHeadline">Flavor Text</div>
+                <div class="flavorText">${flavorText.replace('\f', ' ')}</div>
+            </div>`
+}

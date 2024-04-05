@@ -64,3 +64,78 @@ function renderPokemonCardInfos() {
     document.getElementById('pokemonGrowthRate').innerHTML = pokemonGrowthRate;
     showPokemonAbilities();
 }
+
+// Load Pokemon Base Stats
+function loadPokemonBaseStats() {
+    pokemonCardInfoContainer.innerHTML = '';
+    renderPokemonBaseStats();
+}
+
+function renderPokemonBaseStats() {
+    showPokemonBaseStats();
+    showFlavorText()
+}
+
+function showPokemonBaseStats() {
+    let pokemonBaseStats = currentPokemon['stats'];
+    let sum = 0;
+    for (let i = 0; i < pokemonBaseStats.length; i++) {
+        const pokemonBaseStat = pokemonBaseStats[i];
+        const baseStatsName = pokemonBaseStat['stat']['name'];
+        const baseStatsValue = pokemonBaseStat['base_stat'];
+        sum += pokemonBaseStat['base_stat'];
+        pokemonCardInfoContainer.innerHTML += generatePokemonBaseStats(baseStatsName, baseStatsValue, i);
+        renderProgressBar(baseStatsValue, i);
+    }
+    pokemonCardInfoContainer.innerHTML += generateTotalProgressBar(sum);
+    renderTotalProgressBar(sum);
+}
+
+function renderProgressBar(baseStatsValue, i) {
+    let value = baseStatsValue;
+    let minValue = 0;
+    let maxValue = 200;
+    let redColor = '#ff0000';
+    let yellowColor = '#ffff00';
+    let greenColor = '#00ff00';
+    let progressBar = document.getElementById(`progressBar${i}`);
+
+    if (value < 80) {
+        progressBar.style.backgroundColor = redColor;
+    } else if (value >= 80 && value < 140) {
+        progressBar.style.backgroundColor = yellowColor;
+    } else {
+        progressBar.style.backgroundColor = greenColor;
+    }
+
+    let width = (value - minValue) / (maxValue - minValue) * 100;
+    progressBar.style.width = width + '%';
+    progressBar.innerHTML = value + '%';
+}
+
+function renderTotalProgressBar(sum) {
+    let value = sum;
+    let minValue = 0;
+    let maxValue = 1200;
+    let redColor = '#ff0000';
+    let yellowColor = '#ffff00';
+    let greenColor = '#00ff00';
+    let progressBar = document.getElementById(`TotalProgressBar`);
+
+    if (value < 400) {
+        progressBar.style.backgroundColor = redColor;
+    } else if (value >= 400 && value < 600) {
+        progressBar.style.backgroundColor = yellowColor;
+    } else {
+        progressBar.style.backgroundColor = greenColor;
+    }
+
+    let width = (value - minValue) / (maxValue - minValue) * 100;
+    progressBar.style.width = width + '%';
+    progressBar.innerHTML = value + '%';
+}
+
+function showFlavorText() {
+    let flavorText = showPokemonFlavorText();
+    pokemonCardInfoContainer.innerHTML += generateFlavorText(flavorText);
+}
