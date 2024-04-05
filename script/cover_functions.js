@@ -10,3 +10,18 @@ function formatId(number) {
 function stopPropagation(event) {
     event.stopPropagation();
 }
+
+function renderBackgroundColor(pokemonId) {
+    let pokemonTypes = currentPokemon['types'];
+    let firstPokemonType = pokemonTypes[0]['type']['name'];
+    let startCard = document.getElementById(`startCard${pokemonId}`);
+    for (let i = 0; i < backgroundColors.length; i++) {
+        const backgroundColor = backgroundColors[i];
+        const colorName = backgroundColor['name'];
+        const color = backgroundColor['color'];
+        if (firstPokemonType == colorName) {
+            startCard.style.backgroundColor = color;
+            pokemonCard.style.backgroundColor = color;
+        }
+    }
+}

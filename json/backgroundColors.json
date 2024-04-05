@@ -1,0 +1,91 @@
+[
+    {
+        "name": "normal",
+        "color": "rgb(161,163,160)"
+    },
+    
+    {
+        "name": "fire",
+        "color": "rgb(255,173,118)"
+    },
+
+    {
+        "name": "fighting",
+        "color": "rgb(243,122,117)"
+    },
+
+    {
+        "name": "water",
+        "color": "rgb(146,184,247)"
+    },
+
+    {
+        "name": "flying",
+        "color": "rgb(207,186,248)"
+    },
+
+    {
+        "name": "grass",
+        "color": "rgb(141,219,138)"
+    },
+
+    {
+        "name": "poison",
+        "color": "rgb(213,131,197)"
+    },
+
+    {
+        "name": "electric",
+        "color": "rgb(254,214,85)"
+    },
+
+    {
+        "name": "ground",
+        "color": "rgb(239,200,112)"
+    },
+
+    {
+        "name": "psychic",
+        "color": "rgb(255,141,174)"
+    },
+
+    {
+        "name": "rock",
+        "color": "rgb(218,194,126)"
+    },
+
+    {
+        "name": "ice",
+        "color": "rgb(174,232,232)"
+    },
+
+    {
+        "name": "bug",
+        "color": "rgb(196,211,104)"
+    },
+
+    {
+        "name": "dragon",
+        "color": "rgb(174,124,252)"
+    },
+
+    {
+        "name": "ghost",
+        "color": "rgb(169,149,190)"
+    },
+
+    {
+        "name": "dark",
+        "color": "rgb(167,145,135)"
+    },
+
+    {
+        "name": "steel",
+        "color": "rgb(33,149,165)"
+    },
+
+    {
+        "name": "fairy",
+        "color": "rgb(255,177,192)"
+    }
+]

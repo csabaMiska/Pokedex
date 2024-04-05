@@ -15,6 +15,13 @@ async function loadPokemons(i) { // Loading Current Pokemon
     // console.log('Response is', currentPokemon); // Console.log
 }
 
+async function loadBackgroundColors() { // JSON für die variebile Background Colors
+    let src = 'json/backgroundColors.json';
+    let response = await fetch(src);
+    backgroundColors = await response.json();
+    // console.log('Pokemon Types', backgroundColors); // Console.log
+}
+
 // Loading Start Screen
 async function init() {
     await loadBackgroundColors();
