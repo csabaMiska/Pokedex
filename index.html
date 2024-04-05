@@ -7,6 +7,7 @@
 
     <link rel="icon" href="img/pokeball.png">
     <link rel="stylesheet" href="style/startScreen.css">
+    <link rel="stylesheet" href="style/pokemonCard.css">
     <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 <body>
@@ -33,6 +34,43 @@
         </div>
         <div id="startFooter">
             <p>POKÉDEX made by MCS90</p>
+        </div>
+    </div>
+
+    <div id="pokemonCardContainer" class="pokemonCardContainer d-none" onclick="hidePokemonCard()">
+        <div id="prevContainer" onclick="stopPropagation(event)" class="navIconsContainer">
+            <img src="img/icons/prev.png" onclick="prevPokemon()" class="navIcon" alt="prevPokemon">
+        </div>
+        <div id="pokemonCard" onclick="stopPropagation(event)" style="background-color: white">
+            <div id="pokemonCardNav">
+                
+            </div>
+            <div id="pokemonCardHeader">
+                <div id="pokemonCardHeadline">
+                    <h1 id="pokemonCardName">Pokemon Name</h1>
+                    <p id="pokemonCardId">#001</p>
+                </div>
+                <div id="pokemonCardTypesContainer">
+
+                </div>
+                <div id="pokemonCardImageContainer">
+                    <img src="" id="pokemonCardImage" alt="Pokemon Image">
+                </div>
+            </div>
+            <div id="pokemonCardInfo">
+                <div id="pokemonCardInfoNav">
+                    <a onclick="loadPokemonInfos()" href="#">About</a>
+                    <a onclick="loadPokemonBaseStats()" href="#">Base Stats</a>
+                    <a href="#">Evolution</a>
+                    <a href="#">Moves</a>
+                </div>
+                <div id="pokemonCardInfoContainer">
+
+                </div>
+            </div>
+        </div>
+        <div id="nextContainer" onclick="stopPropagation(event)" class="navIconsContainer">
+            <img src="img/icons/next.png" onclick="nextPokemon()" class="navIcon" alt="nextPokemon">
         </div>
     </div>
 
