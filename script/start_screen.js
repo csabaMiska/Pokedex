@@ -72,3 +72,16 @@ function loadMorePokemons() {
     loadedPokemon += 18;
     loadStartScreen();
 }
+
+// Prev & Next Pokemon
+function prevPokemon() {
+    let currentCard = currentPokemon['id'];
+    currentCard--;
+    loadPokemonCard(currentCard);
+}
+
+function nextPokemon() {
+    let currentCard = currentPokemon['id'];
+    currentCard++;
+    loadPokemonCard(currentCard);
+}
