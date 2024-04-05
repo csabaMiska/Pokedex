@@ -24,3 +24,50 @@ function showPokemonTypes(pokemonId) {
         pokemonCardTypesContainer.innerHTML += `<div class="pokemonType">${pokemonType}</div>`;
     }
 }
+
+function showPokemonBaseExp() {
+    return currentPokemon['base_experience'];
+}
+
+function showPokemonHeightInMeter() {
+    return currentPokemon['height'] / 10;
+}
+
+function showPokemonHeightInInches(pokemonHeightInMeter) {
+    return (pokemonHeightInMeter * 10) * 0.39;
+}
+
+function showPokemonWeightInKg() {
+    return currentPokemon['weight'] / 10;
+}
+
+function showPokemonWeightInLbs(pokemonWeightInKg) {
+    return pokemonWeightInKg * 2.2;
+}
+
+function showPokemonAbilities() {
+    let pokemonAbilitiesContainer = document.getElementById('pokemonAbilities');
+    pokemonAbilitiesContainer.innerHTML = '';
+    let pokemonAbilities = currentPokemon['abilities'];
+    for (let i = 0; i < pokemonAbilities.length; i++) {
+        const currentpokemonAbility = pokemonAbilities[i];
+        const pokemonAbility = capitalizeFirstLetter(currentpokemonAbility['ability']['name']);
+        pokemonAbilitiesContainer.innerHTML += `${pokemonAbility}, `;
+    }
+}
+
+function showPokemonBaseHappiness() {
+    return currentPokemonEgg['base_happiness'];
+}
+
+function showPokemonCaptureRate() {
+    return currentPokemonEgg['capture_rate'];
+}
+
+function showPokemonGrowthRate() {
+    return capitalizeFirstLetter(currentPokemonEgg['growth_rate']['name']);
+}
+
+function showPokemonFlavorText() {
+    return currentPokemonEgg['flavor_text_entries']['0']['flavor_text'];
+}

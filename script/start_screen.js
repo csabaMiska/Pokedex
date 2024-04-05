@@ -3,12 +3,14 @@ let currentPokemon;
 let backgroundColors;
 let loadedPokemon = 18;
 let loadedPokemons = [];
+let currentPokemonEgg;
 
 // Globale Variabels for Render Places
 let startContent = document.getElementById('startContent');
 let pokemonCardContainer = document.getElementById('pokemonCardContainer');
 let pokemonCard = document.getElementById('pokemonCard');
 let pokemonCardNav = document.getElementById('pokemonCardNav');
+let pokemonCardInfoContainer = document.getElementById('pokemonCardInfoContainer');
 
 // Loading API und JSON
 async function loadPokemons(i) { // Loading Current Pokemon
@@ -16,6 +18,13 @@ async function loadPokemons(i) { // Loading Current Pokemon
     let response = await fetch(url);
     currentPokemon = await response.json();
     // console.log('Response is', currentPokemon); // Console.log
+}
+
+async function loadPokemonSpecies() {
+    let url = currentPokemon['species']['url'];
+    let response = await fetch(url);
+    currentPokemonEgg = await response.json();
+    //console.log('This is EGG', currentPokemonEgg); // Console Log
 }
 
 async function loadBackgroundColors() { // JSON für die variebile Background Colors

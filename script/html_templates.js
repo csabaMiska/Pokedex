@@ -22,3 +22,44 @@ function generatePokemonCardNav(favoritId) {
     return `<img src="img/icons/back.png" onclick="hidePokemonCard()" class="pokemonCardIcon" alt="backbutton">
             <img src="img/icons/heart_white.png" onclick="addToFavorit(${favoritId})" id="favoritIcon${favoritId}"class="pokemonCardIcon" alt="favoritbutton">`;
 }
+
+function generatePokemonCardInfoTable() {
+    return `<div class="tableContainer">
+                <table class="customTable">
+                     <tr>
+                        <td class="wideColumn">Base Exp.</td>
+                        <td id="pokemonBaseExp" class="secondColum">Base Exp.</td>
+                    </tr>
+                    <tr>
+                        <td class="wideColumn">Height</td>
+                        <td id="pokemonHeight" class="secondColum">Height</td>
+                    </tr>
+                    <tr>
+                        <td class="wideColumn">Weight</td>
+                        <td id="pokemonWeight" class="secondColum">Weight</td>
+                    </tr>
+                    <tr>
+                        <td class="wideColumn">Abilities</td>
+                        <td id="pokemonAbilities" class="secondColum">Abilities</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tableContainer">
+                <h3>Breeding</h3>
+                <table class="customTable">
+                    <tr>
+                        <td class="wideColumn">Growth Rate</td>
+                        <td id="pokemonGrowthRate" class="secondColum">Growth Rate</td>
+                    </tr>
+                    <tr>
+                        <td class="wideColumn">Base Happiness</td>
+                        <td id="pokemonBaseHappiness" class="secondColum">BaseHappiness</td>
+                    </tr>
+                    <tr>
+                        <td class="wideColumn">Capture Rate</td>
+                        <td id="pokemonCaptureRate" class="secondColum">CaptureRate</td>
+                    </tr>
+                    <tr>
+                </table>
+            </div>`
+}
