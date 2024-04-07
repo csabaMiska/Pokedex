@@ -100,3 +100,7 @@ function generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, e
                 <img class="evolutinBild" src="${evolutionPokemonImage}" alt="Pokemon Image">
             </div>`;
 }
+
+function generatePokemonMoves(move) {
+    return `<div class="pokemonMoves">${move}</div>`;
+}

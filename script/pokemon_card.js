@@ -142,10 +142,10 @@ function showFlavorText() {
 
 // Load Pokemon Evolution
 async function loadPokemonEvolutions() {
-               evolutionPokemons = [];
-         await loadPokemonEvolution();
-               showPokemonEvolution();
-               renderPokemonEvolution();
+    evolutionPokemons = []; // Empty Pokemon Evolution Array
+    await loadPokemonEvolution(); // Load Evolution API
+    showPokemonEvolution(); // Load Current Pokemon Evolution
+    renderPokemonEvolution(); // Render Pokemon Evolution
 }
 
 async function renderPokemonEvolution() {
@@ -154,9 +154,31 @@ async function renderPokemonEvolution() {
         const evolutionPokemon = evolutionPokemons[i];
         const evolutionPokemonName = capitalizeFirstLetter(evolutionPokemon);
         await loadPokemons(evolutionPokemon);
-        const evolutionPokemonId = currentPokemon['id'];
+        const evolutionPokemonId = currentPokemon['id']; // Load Pokemon ID to onclik
         const evolutionPokemonImage = showPokemonImage();
-        let e = i + 1;
+        let e = i + 1; // e = number of Pokemon Evolutin 
         pokemonCardInfoContainer.innerHTML += generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e);
+    }
+}
+
+// Load Pokemon Moves
+function loadPokemonMoves() {
+    generatePokemonMovesContainer(); // Generate a Empty DIV for Moves
+    renderPokemonMoves(); // Render Pokemon Moves
+}
+
+function generatePokemonMovesContainer() {
+    pokemonCardInfoContainer.innerHTML = '';
+    pokemonCardInfoContainer.innerHTML = '<div id="pokemonMovesContainer"> </div>';
+}
+
+function renderPokemonMoves() {
+    let pokemonMovesContainer = document.getElementById('pokemonMovesContainer');
+    pokemonMovesContainer.innerHTML = '';
+    let pokemonMoves = currentPokemon['moves'];
+    for (let i = 0; i < pokemonMoves.length; i++) {
+        const pokemonMove = pokemonMoves[i];
+        const move = pokemonMove['move']['name'];
+        pokemonMovesContainer.innerHTML += generatePokemonMoves(move);
     }
 }

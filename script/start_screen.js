@@ -22,18 +22,18 @@ async function loadPokemons(i) { // Loading Current Pokemon
     //console.log('Response is', currentPokemon); // Console.log
 }
 
-async function loadPokemonSpecies() {
+async function loadPokemonSpecies() { // Load Pokemon Species
     let url = currentPokemon['species']['url'];
     let response = await fetch(url);
     currentPokemonEgg = await response.json();
-    console.log('This is EGG', currentPokemonEgg); // Console Log
+    //console.log('This is Species', currentPokemonEgg); // Console Log
 }
 
-async function loadPokemonEvolution() {
+async function loadPokemonEvolution() { // Load Pokemon Evolutions
     let url = currentPokemonEgg['evolution_chain']['url'];
     let response = await fetch(url);
     currentPokemonEvolution = await response.json();
-    console.log('This is Evolution', currentPokemonEvolution); // Console Log
+    //console.log('This is Evolution', currentPokemonEvolution); // Console Log
 }
 
 async function loadBackgroundColors() { // JSON für die variebile Background Colors
