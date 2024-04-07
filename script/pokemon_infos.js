@@ -71,3 +71,20 @@ function showPokemonGrowthRate() {
 function showPokemonFlavorText() {
     return currentPokemonEgg['flavor_text_entries']['0']['flavor_text'];
 }
+
+function showPokemonEvolution() {
+    let firstEvolution = currentPokemonEvolution['chain']['species']['name'];
+    evolutionPokemons.push(firstEvolution);
+    let evolutions2 = currentPokemonEvolution['chain']['evolves_to'];
+    for (let i = 0; i < evolutions2.length; i++) {
+        const evolution2 = evolutions2[i];
+        const secondEvolution = evolution2['species']['name'];
+        evolutionPokemons.push(secondEvolution);
+        let evolutions3 = evolution2['evolves_to'];
+        for (let e = 0; e < evolutions3.length; e++) {
+            const evolution3 = evolutions3[e];
+            const thirdEvolution = evolution3['species']['name'];
+            evolutionPokemons.push(thirdEvolution);
+        }
+    }
+}

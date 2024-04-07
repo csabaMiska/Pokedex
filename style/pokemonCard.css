@@ -233,6 +233,68 @@
     margin-top: 8px;
 }
 
+/* Pokemon Evolutin*/
+
+#evolutinContainer0 {
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 4%;
+    height: 120px;
+}
+
+#evolutinContainer0:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#evolutinContainer1 {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 4%;
+    height: 120px;
+}
+
+#evolutinContainer1:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#evolutinContainer2 {
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 4%;
+    height: 120px;
+}
+
+#evolutinContainer2:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.evolutionHeadlineContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.evolutionText {
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}
+
+.evolutinBild {
+    width: 28%;
+    height: 90%;
+}
+
 /* Standard Styles */
 
 .d-none {

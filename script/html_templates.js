@@ -14,7 +14,7 @@ function generateStartCardsHTML(startPokemonId, startPokemonName, startPokemonIm
                         <img class="startCardImage" src=${startPokemonImage}>
                     </div>
                 </div>
-            </div>`
+            </div>`;
 } 
 
 // Pokemon Card Templates
@@ -61,7 +61,7 @@ function generatePokemonCardInfoTable() {
                     </tr>
                     <tr>
                 </table>
-            </div>`
+            </div>`;
 }
 
 function generatePokemonBaseStats(baseStatsName, baseStatsValue, i) {
@@ -71,7 +71,7 @@ function generatePokemonBaseStats(baseStatsName, baseStatsValue, i) {
                 <div id="progressBarContainer">
                     <div id="progressBar${i}"></div>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function generateTotalProgressBar(sum) {
@@ -81,12 +81,22 @@ function generateTotalProgressBar(sum) {
                 <div id="progressBarContainer">
                     <div id="TotalProgressBar"></div>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function generateFlavorText(flavorText) {
     return `<div class="flavorBox">
                 <div class="flavorHeadline">Flavor Text</div>
                 <div class="flavorText">${flavorText.replace('\f', ' ')}</div>
-            </div>`
+            </div>`;
+}
+
+function generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e) {
+    return `<div onclick=loadPokemonCard(${evolutionPokemonId}) id="evolutinContainer${i}">
+                <div class="evolutionHeadlineContainer">
+                    <p class="evolutionText">${e}. Evolution</p>
+                    <h3>${evolutionPokemonName}</h3>
+                </div>
+                <img class="evolutinBild" src="${evolutionPokemonImage}" alt="Pokemon Image">
+            </div>`;
 }

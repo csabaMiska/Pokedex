@@ -24,7 +24,7 @@ function showPokemonCardInfos() {
     let pokemonCardName = showPokemonName();
     let pokemonCardImage = showPokemonImage();
     document.getElementById('pokemonCardName').innerHTML = pokemonCardName;
-    document.getElementById('pokemonCardId').innerHTML = pokemonCardId;
+    document.getElementById('pokemonCardId').innerHTML = `#${pokemonCardId}`;
     document.getElementById('pokemonCardImage').src = pokemonCardImage;
 }
 
@@ -138,4 +138,25 @@ function renderTotalProgressBar(sum) {
 function showFlavorText() {
     let flavorText = showPokemonFlavorText();
     pokemonCardInfoContainer.innerHTML += generateFlavorText(flavorText);
+}
+
+// Load Pokemon Evolution
+async function loadPokemonEvolutions() {
+               evolutionPokemons = [];
+         await loadPokemonEvolution();
+               showPokemonEvolution();
+               renderPokemonEvolution();
+}
+
+async function renderPokemonEvolution() {
+    pokemonCardInfoContainer.innerHTML = '';
+    for (let i = 0; i < evolutionPokemons.length; i++) {
+        const evolutionPokemon = evolutionPokemons[i];
+        const evolutionPokemonName = capitalizeFirstLetter(evolutionPokemon);
+        await loadPokemons(evolutionPokemon);
+        const evolutionPokemonId = currentPokemon['id'];
+        const evolutionPokemonImage = showPokemonImage();
+        let e = i + 1;
+        pokemonCardInfoContainer.innerHTML += generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e);
+    }
 }

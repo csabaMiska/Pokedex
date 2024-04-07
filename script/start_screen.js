@@ -4,6 +4,8 @@ let backgroundColors;
 let loadedPokemon = 18;
 let loadedPokemons = [];
 let currentPokemonEgg;
+let currentPokemonEvolution;
+let evolutionPokemons = [];
 
 // Globale Variabels for Render Places
 let startContent = document.getElementById('startContent');
@@ -17,14 +19,21 @@ async function loadPokemons(i) { // Loading Current Pokemon
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     let response = await fetch(url);
     currentPokemon = await response.json();
-    // console.log('Response is', currentPokemon); // Console.log
+    //console.log('Response is', currentPokemon); // Console.log
 }
 
 async function loadPokemonSpecies() {
     let url = currentPokemon['species']['url'];
     let response = await fetch(url);
     currentPokemonEgg = await response.json();
-    //console.log('This is EGG', currentPokemonEgg); // Console Log
+    console.log('This is EGG', currentPokemonEgg); // Console Log
+}
+
+async function loadPokemonEvolution() {
+    let url = currentPokemonEgg['evolution_chain']['url'];
+    let response = await fetch(url);
+    currentPokemonEvolution = await response.json();
+    console.log('This is Evolution', currentPokemonEvolution); // Console Log
 }
 
 async function loadBackgroundColors() { // JSON für die variebile Background Colors
