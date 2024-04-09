@@ -15,7 +15,7 @@ function generateStartCardsHTML(startPokemonId, startPokemonName, startPokemonIm
                     </div>
                 </div>
             </div>`;
-} 
+}
 
 // Pokemon Card Templates
 function generatePokemonCardNav(favoritId) {

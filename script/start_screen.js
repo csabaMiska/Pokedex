@@ -6,6 +6,10 @@ let loadedPokemons = [];
 let currentPokemonEgg;
 let currentPokemonEvolution;
 let evolutionPokemons = [];
+let favoritPokemons = [];
+
+// Load Favorit Pokemons
+loadfavoritPokemonsAsText();
 
 // Globale Variabels for Render Places
 let startContent = document.getElementById('startContent');
@@ -93,4 +97,17 @@ function nextPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard++;
     loadPokemonCard(currentCard);
+}
+
+// Save & Load Favorit Pokemons
+function savefavoritPokemonsAsText() {
+    let favoritPokemonsAsText = JSON.stringify(favoritPokemons);
+    localStorage.setItem('favoritPokemons', favoritPokemonsAsText);
+}
+
+function loadfavoritPokemonsAsText() {
+    let favoritPokemonsAsText = localStorage.getItem('favoritPokemons');
+    if (favoritPokemonsAsText) {
+        favoritPokemons = JSON.parse(favoritPokemonsAsText);
+    }
 }

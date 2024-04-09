@@ -12,6 +12,7 @@ function renderPokemonsCard(pokemonId) {
     showPokemonCardInfos();
     showPokemonTypes(pokemonId);
     renderBackgroundColor(pokemonId);
+    renderStartCardFavoritIcon(pokemonId);
 }
 
 function generateFavoritPokemonId() {
