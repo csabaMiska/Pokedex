@@ -30,7 +30,8 @@
 
         </div>
         <div id="startLoadMore">
-            <button onclick="loadMorePokemons()">Load More Pokémon</button>
+            <button id="morePokemon" class="morePokemonButton" onclick="loadMorePokemons()">Load More Pokémon</button>
+            <button id="moreFavoritPokemon" class="morePokemonButton d-none" onclick="loadMoreFavoritPokemons()">Load More Favorit Pokémon</button>
         </div>
         <div id="startFooter">
             <p>POKÉDEX made by CM90</p>
@@ -39,7 +40,8 @@
 
     <div id="pokemonCardContainer" class="pokemonCardContainer d-none" onclick="hidePokemonCard()">
         <div id="prevContainer" onclick="stopPropagation(event)" class="navIconsContainer">
-            <img src="img/icons/prev.png" onclick="prevPokemon()" class="navIcon" alt="prevPokemon">
+            <img id="prevPokemon" src="img/icons/prev.png" onclick="prevPokemon()" class="navIcon" alt="prevPokemon">
+            <img id="prevFavoritPokemon" src="img/icons/prev.png" onclick="prevFavoritPokemon()" class="navIcon d-none" alt="prevPokemon">
         </div>
         <div id="pokemonCard" onclick="stopPropagation(event)" style="background-color: white">
             <div id="pokemonCardNav">
@@ -70,7 +72,8 @@
             </div>
         </div>
         <div id="nextContainer" onclick="stopPropagation(event)" class="navIconsContainer">
-            <img src="img/icons/next.png" onclick="nextPokemon()" class="navIcon" alt="nextPokemon">
+            <img id="nextPokemon" src="img/icons/next.png" onclick="nextPokemon()" class="navIcon" alt="nextPokemon">
+            <img id="nextFavoritPokemon" src="img/icons/next.png" onclick="nextFavoritPokemon()" class="navIcon d-none" alt="nextPokemon">
         </div>
     </div>
 

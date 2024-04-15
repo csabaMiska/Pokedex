@@ -10,7 +10,7 @@ async function loadPokemonCard(pokemonId) {
 function renderPokemonsCard(pokemonId) {
     generateFavoritPokemonId();
     showPokemonCardInfos();
-    showPokemonTypes(pokemonId);
+    showPokemonTypes();
     renderBackgroundColor(pokemonId);
     renderStartCardFavoritIcon(pokemonId);
 }

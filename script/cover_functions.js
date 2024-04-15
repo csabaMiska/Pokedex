@@ -22,6 +22,7 @@ function renderBackgroundColor(pokemonId) {
         if (firstPokemonType == colorName) {
             startCard.style.backgroundColor = color;
             pokemonCard.style.backgroundColor = color;
+            break
         }
     }
 }

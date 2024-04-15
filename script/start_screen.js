@@ -7,6 +7,7 @@ let currentPokemonEgg;
 let currentPokemonEvolution;
 let evolutionPokemons = [];
 let favoritPokemons = [];
+let loadedFavoritPokemon = 18;
 
 // Load Favorit Pokemons
 loadfavoritPokemonsAsText();
@@ -67,10 +68,12 @@ async function renderStartScreen() { // Render the Start Screen Pokemon Cards
     for (let i = 0; i < loadedPokemons.length; i++) {
         let pokemonId = loadedPokemons[i] + 1; // n - number of pokemon
         await loadPokemons(pokemonId);
-              showPokemonInfo(pokemonId);
-              showPokemonTypes(pokemonId);
-              renderBackgroundColor(pokemonId);
+        showPokemonInfo(pokemonId);
+        showStartPokemonTypes(pokemonId);
+        renderBackgroundColor(pokemonId);
     }
+    loadStartPokemonScreen();
+    loadPokemonPrevAndNext();
 }
 
 function showPokemonInfo(pokemonId) {
@@ -97,6 +100,20 @@ function nextPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard++;
     loadPokemonCard(currentCard);
+}
+
+//Load Start Pokemon Screen
+function loadStartPokemonScreen() {
+    document.getElementById('morePokemon').classList.remove('d-none');
+    document.getElementById('moreFavoritPokemon').classList.add('d-none');
+}
+
+//Load Pokemon Prev & Next Button
+function loadPokemonPrevAndNext() {
+    document.getElementById('prevPokemon').classList.remove('d-none');
+    document.getElementById('prevFavoritPokemon').classList.add('d-none');
+    document.getElementById('nextPokemon').classList.remove('d-none');
+    document.getElementById('nextFavoritPokemon').classList.add('d-none');
 }
 
 // Save & Load Favorit Pokemons
