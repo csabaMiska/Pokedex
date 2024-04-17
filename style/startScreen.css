@@ -69,6 +69,10 @@ p {
     z-index: 2;
 }
 
+.pokemonLogo:hover {
+    cursor: pointer;
+}
+
 .startNav {
     display: flex;
     align-items: center;

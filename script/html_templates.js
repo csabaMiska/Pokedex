@@ -1,6 +1,6 @@
 // Strat Screen Templates
 function generateStartCardsHTML(startPokemonId, startPokemonName, startPokemonImage, pokemonId) {
-    return `<div id="startCard${pokemonId}" onclick="loadPokemonCard(${pokemonId})" class="startCard" style="background-color: rgb(70, 209, 177);">
+    return `<div id="startCard${pokemonId}" onclick="loadPokemonCard('${pokemonId}')" class="startCard" style="background-color: rgb(70, 209, 177);">
                 <div class="startCardIdContainer">
                     <div class="startCardId">#${startPokemonId}</div>
                 </div>

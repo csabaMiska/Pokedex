@@ -8,6 +8,7 @@ let currentPokemonEvolution;
 let evolutionPokemons = [];
 let favoritPokemons = [];
 let loadedFavoritPokemon = 18;
+let loadedPokemonNames = [];
 
 // Load Favorit Pokemons
 loadfavoritPokemonsAsText();
@@ -70,7 +71,8 @@ async function renderStartScreen() { // Render the Start Screen Pokemon Cards
         await loadPokemons(pokemonId);
         showPokemonInfo(pokemonId);
         showStartPokemonTypes(pokemonId);
-        renderBackgroundColor(pokemonId);
+        renderStartCardBackgroundColor(pokemonId);
+        loadPokemonNames();
     }
     loadStartPokemonScreen();
     loadPokemonPrevAndNext();
@@ -116,7 +118,7 @@ function loadPokemonPrevAndNext() {
     document.getElementById('nextFavoritPokemon').classList.add('d-none');
 }
 
-// Save & Load Favorit Pokemons
+//Save & Load Favorit Pokemons
 function savefavoritPokemonsAsText() {
     let favoritPokemonsAsText = JSON.stringify(favoritPokemons);
     localStorage.setItem('favoritPokemons', favoritPokemonsAsText);
@@ -127,4 +129,36 @@ function loadfavoritPokemonsAsText() {
     if (favoritPokemonsAsText) {
         favoritPokemons = JSON.parse(favoritPokemonsAsText);
     }
+}
+
+//Search Pokemon 
+function loadPokemonNames() {
+    let pokemonName = currentPokemon['name'];
+    let pokemonId = currentPokemon['id'];
+    let newObiject = {"name": pokemonName, "id": pokemonId}
+    loadedPokemonNames.push(newObiject);
+}
+
+function filterPokemons() {
+    startContent.innerHTML = '';
+    let startSearch = document.getElementById('startSearch').value;
+    startSearch = startSearch.toLowerCase();
+    for (let i = 0; i < loadedPokemonNames.length; i++) {
+        let pokemonName = loadedPokemonNames[i]['name'];
+        let pokemonId = loadedPokemonNames[i]['id'];
+        pokemonName = pokemonName.toLowerCase();
+        if (startSearch.length < 3) {
+            startContent.innerHTML = `<div>Kein Pokemon Gefunden!</div>`;
+            break
+        } if (pokemonName.includes(startSearch)) {
+            renderSearchPokemons(pokemonId);
+        }
+    }
+}
+
+async function renderSearchPokemons(pokemonId) {
+    await loadPokemons(pokemonId);
+    showPokemonInfo(pokemonId);
+    showStartPokemonTypes(pokemonId);
+    renderStartCardBackgroundColor(pokemonId);
 }

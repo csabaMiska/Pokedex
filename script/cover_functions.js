@@ -11,7 +11,7 @@ function stopPropagation(event) {
     event.stopPropagation();
 }
 
-function renderBackgroundColor(pokemonId) {
+function renderStartCardBackgroundColor(pokemonId) {
     let pokemonTypes = currentPokemon['types'];
     let firstPokemonType = pokemonTypes[0]['type']['name'];
     let startCard = document.getElementById(`startCard${pokemonId}`);
@@ -21,6 +21,19 @@ function renderBackgroundColor(pokemonId) {
         const color = backgroundColor['color'];
         if (firstPokemonType == colorName) {
             startCard.style.backgroundColor = color;
+            break
+        }
+    }
+}
+
+function renderPokemonCardBackgroundColor(pokemonId) {
+    let pokemonTypes = currentPokemon['types'];
+    let firstPokemonType = pokemonTypes[0]['type']['name'];
+    for (let i = 0; i < backgroundColors.length; i++) {
+        const backgroundColor = backgroundColors[i];
+        const colorName = backgroundColor['name'];
+        const color = backgroundColor['color'];
+        if (firstPokemonType == colorName) {
             pokemonCard.style.backgroundColor = color;
             break
         }

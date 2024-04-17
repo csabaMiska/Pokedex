@@ -14,15 +14,14 @@
     <div id="startScreen">
         <div id="startHeader">
             <div id="startHeadline">
-                <img class="pokemonLogo" src="./img/pokemon_logo.jpg" alt="Pokemon Logo">
+                <img onclick="loadStartScreen()" class="pokemonLogo" src="./img/pokemon_logo.jpg" alt="Pokemon Logo">
                 <div class="startNav">
                         <div class="startButton1" onclick="init()"><img src="img/pokeball.png" class="startNavIcon" alt="pokeBall"><h3>Home Page</h3></div>
                         <div class="startButton2" onclick="renderFavoritPokemons()"><img src="img/icons/heart_red.png" class="startNavIcon" alt="favoritIcon"><h3>Favorit</h3></div>
                 </div>    
                     <form>
-                        <input id="startSearch" type="text" required placeholder="Pokémon suchen..." minlength="1">
+                        <input onkeydown="filterPokemons()" id="startSearch" type="text" required placeholder="Pokémon suchen..." minlength="3">
                     </form>
-                
             </div>
             <div id="startDesign"></div>
         </div>

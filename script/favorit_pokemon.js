@@ -15,7 +15,6 @@ function addToFavorit(favoritId) {
     if (!isPokemonInFavorites) {
         favoritPokemons.push(favoritId);
     }
-
     renderFavoritIcon(favoritId);
     savefavoritPokemonsAsText();
 }
@@ -52,7 +51,6 @@ function renderStartCardFavoritIcon(pokemonId) {
 }
 
 // Render Favorit Pokemons
-
 async function renderFavoritPokemons() {
     startContent.innerHTML = '';
     favoritPokemons.sort(function (a, b) { return a - b });
