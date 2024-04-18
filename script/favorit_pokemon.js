@@ -65,7 +65,7 @@ async function renderFavoritPokemons() {
             await loadPokemons(favoritPokemon);
             showPokemonInfo(favoritPokemon);
             showStartPokemonTypes(favoritPokemon);
-            renderBackgroundColor(favoritPokemon);
+            renderStartCardBackgroundColor(favoritPokemon);
         }
     }
     loadFavoritPokemonScreen();

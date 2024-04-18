@@ -52,6 +52,7 @@ p {
     left: 0;
     right: 0;
     height: 16%;
+    z-index: 1;
     background-color: rgb(34, 34, 34);
 }
 
@@ -280,8 +281,40 @@ p {
     border: 4px solid rgb(255, 204, 1);
 }
 
+#startSearch:hover {
+    outline: 4px solid rgb(39, 116, 186);
+}
+
 #startSearch:focus {
     outline: 4px solid rgb(39, 116, 186);
+}
+
+
+form input:placeholder-shown+button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+form button {
+    position: absolute;
+    border: none;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 16px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    right: 90px;
+    margin: auto;
+    background: rgb(39, 116, 186);
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    transition: .1s;
 }
 
 #startContent {
@@ -300,7 +333,29 @@ p {
     justify-content: center;
     align-items: start;
     padding-top: 20px;
+    padding-bottom: 20px;
     height: 100px;
+}
+
+.morePokemonButton {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 36px;
+    padding-right: 36px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(39, 116, 186);
+    background-color: rgb(255, 204, 1);
+    border: solid 6px rgb(39, 116, 186);
+    border-radius: 30px;
+}
+
+.morePokemonButton:hover {
+    cursor: pointer;
+    background-color: rgb(39, 116, 186);
+    border-color: rgb(255, 204, 1);
+    color: rgb(255, 204, 1);
 }
 
 #startFooter {
@@ -325,10 +380,115 @@ p {
     box-sizing: border-box;
     margin: 8px;
     border-radius: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="100" fill="none"/><circle cx="100" cy="100" r="20" fill="rgba(253, 253, 253, 0.4)"/><circle cx="100" cy="100" r="44" fill="none" stroke="none"/><circle cx="100" cy="100" r="78" fill="none" stroke="rgba(253, 253, 253, 0.4)" stroke-width="40"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 180px;
 }
 
 .startCard:hover {
     cursor: pointer;
+    animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes shadow-drop-2-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(50px);
+        transform: translateZ(50px);
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes shadow-drop-2-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(50px);
+        transform: translateZ(50px);
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.startCard:hover img {
+    animation: vibrate-2 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite both;
+}
+
+@-webkit-keyframes vibrate-2 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    40% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    60% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes vibrate-2 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    40% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    60% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
 }
 
 .startCardIdContainer {
@@ -380,4 +540,14 @@ p {
 .startCardImage {
     height: 100%;
     width: 90%;
+}
+
+.nofoundScreen {
+    height: 50vh;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8, 4px 5px 2px rgba(5,2,1,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -13,6 +13,7 @@ function generateStartCardsHTML(startPokemonId, startPokemonName, startPokemonIm
                     <div class="startCardImageContainer">
                         <img class="startCardImage" src=${startPokemonImage}>
                     </div>
+                    </dic>
                 </div>
             </div>`;
 }

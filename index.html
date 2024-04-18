@@ -20,7 +20,8 @@
                         <div class="startButton2" onclick="renderFavoritPokemons()"><img src="img/icons/heart_red.png" class="startNavIcon" alt="favoritIcon"><h3>Favorit</h3></div>
                 </div>    
                     <form>
-                        <input onkeydown="filterPokemons()" id="startSearch" type="text" required placeholder="Pokémon suchen..." minlength="3">
+                        <input onkeydown="filterPokemons()" id="startSearch" type="text" required placeholder="Search Pokémon..." minlength="3">
+                        <button onclick="clearSearchPokemon()" type="reset">&times;</button>
                     </form>
             </div>
             <div id="startDesign"></div>
@@ -29,8 +30,8 @@
 
         </div>
         <div id="startLoadMore">
-            <button id="morePokemon" class="morePokemonButton" onclick="loadMorePokemons()">Load More Pokémon</button>
-            <button id="moreFavoritPokemon" class="morePokemonButton d-none" onclick="loadMoreFavoritPokemons()">Load More Favorit Pokémon</button>
+            <button id="morePokemon" class="morePokemonButton" onclick="loadMorePokemons()">Load More Pokémons</button>
+            <button id="moreFavoritPokemon" class="morePokemonButton d-none" onclick="loadMoreFavoritPokemons()">Load More Favorit Pokémons</button>
         </div>
         <div id="startFooter">
             <p>POKÉDEX made by CM90</p>
