@@ -22,8 +22,8 @@ function addToFavorit(favoritId) {
 // Render Favorit Icon
 function renderFavoritIcon(favoritId) {
     let favoritIcon = document.getElementById(`favoritIcon${favoritId}`);
-    let favoritWhiteIcon = 'http://127.0.0.1:5500/img/icons/heart_white.png';
-    let favoritRedIcon = 'http://127.0.0.1:5500/img/icons/heart_red.png';
+    let favoritWhiteIcon = 'img/icons/heart_white.png';
+    let favoritRedIcon = 'img/icons/heart_red.png';
     for (let i = 0; i < favoritPokemons.length; i++) {
         const favoritPokemon = favoritPokemons[i];
         if (favoritPokemon === favoritId) {
@@ -37,8 +37,8 @@ function renderFavoritIcon(favoritId) {
 //Render Start Card Favorit Icon
 function renderStartCardFavoritIcon(pokemonId) {
     let favoritIcon = document.getElementById(`favoritIcon${pokemonId}`);
-    let favoritWhiteIcon = 'http://127.0.0.1:5500/img/icons/heart_white.png';
-    let favoritRedIcon = 'http://127.0.0.1:5500/img/icons/heart_red.png';
+    let favoritWhiteIcon = 'img/icons/heart_white.png';
+    let favoritRedIcon = 'img/icons/heart_red.png';
     for (let i = 0; i < favoritPokemons.length; i++) {
         const favoritPokemonId = favoritPokemons[i];
         if (pokemonId == favoritPokemonId) {
