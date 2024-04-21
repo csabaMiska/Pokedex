@@ -57,7 +57,8 @@ async function renderFavoritPokemons() {
     for (let i = 0; i < loadedFavoritPokemon; i++) {
         const favoritPokemon = favoritPokemons[i];
         if (favoritPokemons.length < 1) {
-            alert('Du hast kein Favorit Pokemon');
+            startContent.innerHTML = `<div class="noFoundScreen">No Favorit Pokémon.</div>`;
+            hideMorePokemonButtons();
             break
         } if (i === favoritPokemons.length) {
             break
@@ -68,13 +69,13 @@ async function renderFavoritPokemons() {
             renderStartCardBackgroundColor(favoritPokemon);
         }
     }
-    loadFavoritPokemonScreen();
+    showMorePokemonButtons();
     loadFavoritPokemonPrevAndNext();
 }
 
 //Load More Favorit Pokemon
 function loadMoreFavoritPokemons() {
-    loadedFavoritPokemon += 18;
+    loadedFavoritPokemon += 20;
     renderFavoritPokemons();
 }
 
@@ -96,6 +97,7 @@ function prevFavoritPokemon() {
         for (let i = currentFavoritPokemon; i < favoritPokemons.length; i++) {
             const favoritPokemon = favoritPokemons[i];
             loadPokemonCard(favoritPokemon);
+            hideFavoritPrevIcon();
             break
         }
     }
@@ -108,17 +110,27 @@ function nextFavoritPokemon() {
         for (let i = currentFavoritPokemon; i < favoritPokemons.length; i++) {
             const favoritPokemon = favoritPokemons[i];
             loadPokemonCard(favoritPokemon);
+            hideFavoritNextIcon();
             break
         }
     }
 }
 
-//Load Favorit Pokemon Screen
-function loadFavoritPokemonScreen() {
+//Show More Favorit Pokemon Button
+function showMorePokemonButtons() {
     document.getElementById('morePokemon').classList.add('d-none');
-    document.getElementById('moreFavoritPokemon').classList.remove('d-none');
+    if (favoritPokemons.length > loadedFavoritPokemon) {
+        document.getElementById('moreFavoritPokemon').classList.remove('d-none');
+    } else {
+        document.getElementById('moreFavoritPokemon').classList.add('d-none');
+    }
 }
 
+//Show More Favorit Pokemon Button
+function hideMorePokemonButtons() {
+    document.getElementById('moreFavoritPokemon').classList.add('d-none');
+    document.getElementById('morePokemon').classList.add('d-none');
+}
 
 //Load Favorit Pokemon Prev & Next Button
 function loadFavoritPokemonPrevAndNext() {
@@ -126,4 +138,28 @@ function loadFavoritPokemonPrevAndNext() {
     document.getElementById('prevFavoritPokemon').classList.remove('d-none');
     document.getElementById('nextPokemon').classList.add('d-none');
     document.getElementById('nextFavoritPokemon').classList.remove('d-none');
+}
+
+//Show Favorit Pokemon Prev & Next Button
+function hideFavoritPrevIcon() {
+    let i = searchFavoritPokemonId();
+    if (i <= 0) {
+        document.getElementById('prevFavoritPokemon').classList.add('b-disabled');
+    } 
+    
+    if (i >= 1) {
+        document.getElementById('nextFavoritPokemon').classList.remove('b-disabled');
+    }
+}
+
+function hideFavoritNextIcon() {
+    let i = searchFavoritPokemonId();
+    let lastFavoritPokemon = favoritPokemons.length - 1;
+    if (i === lastFavoritPokemon) {
+        document.getElementById('nextFavoritPokemon').classList.add('b-disabled');
+    } 
+   
+    if (i >= 1) {
+        document.getElementById('prevFavoritPokemon').classList.remove('b-disabled');
+    }
 }

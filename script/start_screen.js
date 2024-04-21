@@ -1,14 +1,14 @@
 // Globale Variabels
 let currentPokemon;
 let backgroundColors;
-let loadedPokemon = 1025;
+let loadedPokemon = 20;
 let loadedPokemons = [];
 let currentPokemonEgg;
 let currentPokemonEvolution;
 let evolutionPokemons = [];
 let favoritPokemons = [];
-let loadedFavoritPokemon = 18;
-let loadedPokemonNames = [];
+let loadedFavoritPokemon = 20;
+let searchPokemonNames;
 
 // Load Favorit Pokemons
 loadfavoritPokemonsAsText();
@@ -46,12 +46,20 @@ async function loadBackgroundColors() { // JSON für die variebile Background Co
     let src = 'json/backgroundColors.json';
     let response = await fetch(src);
     backgroundColors = await response.json();
-    // console.log('Pokemon Types', backgroundColors); // Console.log
+    // console.log('Pokemon Backgroundcolors', backgroundColors); // Console.log
+}
+
+async function loadSearchPokemonNames() { // JSON für die variebile Background Colors
+    let src = 'json/pokemonNames.json';
+    let response = await fetch(src);
+    searchPokemonNames = await response.json();
+    // console.log('Pokemon Names', searchPokemonNames); // Console.log
 }
 
 // Loading Start Screen
 async function init() {
     await loadBackgroundColors();
+    await loadSearchPokemonNames();
     loadStartScreen()
 }
 
@@ -72,7 +80,6 @@ async function renderStartScreen() { // Render the Start Screen Pokemon Cards
         showPokemonInfo(pokemonId);
         showStartPokemonTypes(pokemonId);
         renderStartCardBackgroundColor(pokemonId);
-        loadPokemonNames();
     }
     loadStartPokemonScreen();
     loadPokemonPrevAndNext();
@@ -87,7 +94,7 @@ function showPokemonInfo(pokemonId) {
 
 // Load More Pokemon
 function loadMorePokemons() {
-    loadedPokemon += 18;
+    loadedPokemon += 20;
     loadStartScreen();
 }
 
@@ -95,12 +102,14 @@ function loadMorePokemons() {
 function prevPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard--;
+    showPrevIcon(currentCard);
     loadPokemonCard(currentCard);
 }
 
 function nextPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard++;
+    showNextIcon(currentCard);
     loadPokemonCard(currentCard);
 }
 
@@ -118,6 +127,33 @@ function loadPokemonPrevAndNext() {
     document.getElementById('nextFavoritPokemon').classList.add('d-none');
 }
 
+// Show & Hide Nav Buttons
+function hideNavButtons() {
+    document.getElementById('morePokemon').classList.add('d-none');
+    document.getElementById('moreFavoritPokemon').classList.add('d-none');
+
+    document.getElementById('prevPokemon').classList.add('d-none');
+    document.getElementById('prevFavoritPokemon').classList.add('d-none');
+    document.getElementById('nextPokemon').classList.add('d-none');
+    document.getElementById('nextFavoritPokemon').classList.add('d-none');
+}
+
+function showPrevIcon(currentCard) {
+    if (currentCard <= 1) {
+        document.getElementById('prevPokemon').classList.add('b-disabled');
+    } 
+
+    if (currentCard > 1) {
+        document.getElementById('prevPokemon').classList.remove('b-disabled');
+    }
+}
+
+function showNextIcon(currentCard) {
+    if (currentCard >= searchPokemonNames.length) {
+        document.getElementById('nextPokemon').classList.add('b-disabled');
+    }
+}
+
 //Save & Load Favorit Pokemons
 function savefavoritPokemonsAsText() {
     let favoritPokemonsAsText = JSON.stringify(favoritPokemons);
@@ -132,25 +168,18 @@ function loadfavoritPokemonsAsText() {
 }
 
 //Search Pokemon 
-function loadPokemonNames() {
-    let pokemonName = currentPokemon['name'];
-    let pokemonId = currentPokemon['id'];
-    let newObiject = {"name": pokemonName, "id": pokemonId}
-    loadedPokemonNames.push(newObiject);
-}
-
 function filterPokemons() {
     let startSearch = document.getElementById('startSearch').value;
     startSearch = startSearch.toLowerCase();
-    for (let i = 0; i < loadedPokemonNames.length; i++) {
-        let pokemonName = loadedPokemonNames[i]['name'];
-        let pokemonId = loadedPokemonNames[i]['id'];
+    for (let i = 0; i < searchPokemonNames.length; i++) {
+        let pokemonName = searchPokemonNames[i]['name'];
+        let pokemonId = searchPokemonNames[i]['id'];
         pokemonName = pokemonName.toLowerCase();
         if (startSearch.length > 2 && pokemonName.includes(startSearch)) {
             startContent.innerHTML = '';
             renderSearchPokemons(pokemonId);
         } if (startSearch.length < 3) {
-            startContent.innerHTML = `<div class="nofoundScreen">No Pokémon Found...</div>`;
+            startContent.innerHTML = `<div class="noFoundScreen">No Pokémon Found...</div>`;
             hideNavButtons();
         }
     }
@@ -165,16 +194,6 @@ async function renderSearchPokemons(pokemonId) {
 }
 
 function clearSearchPokemon() {
-    loadedPokemonNames = [];
-    loadStartScreen();
-}
-
-function hideNavButtons() {
-    document.getElementById('morePokemon').classList.add('d-none');
-    document.getElementById('moreFavoritPokemon').classList.add('d-none');
-
-    document.getElementById('prevPokemon').classList.add('d-none');
-    document.getElementById('prevFavoritPokemon').classList.add('d-none');
-    document.getElementById('nextPokemon').classList.add('d-none');
-    document.getElementById('nextFavoritPokemon').classList.add('d-none');
+    let startSearch = document.getElementById('startSearch').value;
+    startSearch.value = '';
 }

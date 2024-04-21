@@ -8,7 +8,7 @@ function showPokemonName() {
 }
 
 function showPokemonImage() {
-    return currentPokemon['sprites']['other']['dream_world']['front_default'];
+    return currentPokemon['sprites']['other']['official-artwork']['front_default'];
 }
 
 function showStartPokemonTypes(pokemonId) {
@@ -18,7 +18,7 @@ function showStartPokemonTypes(pokemonId) {
     for (let i = 0; i < pokemonTypes.length; i++) {
         const currentpokemonType = pokemonTypes[i];
         const pokemonType = capitalizeFirstLetter(currentpokemonType['type']['name']);
-        startCardTypesContainer.innerHTML += `<div class="pokemonType">${pokemonType}</div>`;
+        startCardTypesContainer.innerHTML += `<div class="startCardTypes">${pokemonType}</div>`;
     }
 }
 

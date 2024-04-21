@@ -3,6 +3,10 @@ async function loadPokemonCard(pokemonId) {
     await loadPokemons(pokemonId);
     await loadPokemonSpecies();
     showPokemonCard();
+    showPrevIcon(pokemonId);
+    showNextIcon(pokemonId);
+    hideFavoritPrevIcon();
+    hideFavoritNextIcon();
     renderPokemonsCard(pokemonId);
     loadPokemonInfos();
 }
