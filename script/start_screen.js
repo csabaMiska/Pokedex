@@ -102,14 +102,12 @@ function loadMorePokemons() {
 function prevPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard--;
-    showPrevIcon(currentCard);
     loadPokemonCard(currentCard);
 }
 
 function nextPokemon() {
     let currentCard = currentPokemon['id'];
     currentCard++;
-    showNextIcon(currentCard);
     loadPokemonCard(currentCard);
 }
 
@@ -138,19 +136,22 @@ function hideNavButtons() {
     document.getElementById('nextFavoritPokemon').classList.add('d-none');
 }
 
-function showPrevIcon(currentCard) {
+function disabledPrevButton(currentCard) {
     if (currentCard <= 1) {
         document.getElementById('prevPokemon').classList.add('b-disabled');
+        document.getElementById('prevPokemon').disabled = true;
     } 
 
     if (currentCard > 1) {
         document.getElementById('prevPokemon').classList.remove('b-disabled');
+        document.getElementById('prevPokemon').disabled = false;
     }
 }
 
-function showNextIcon(currentCard) {
+function disabledNextButton(currentCard) {
     if (currentCard >= searchPokemonNames.length) {
         document.getElementById('nextPokemon').classList.add('b-disabled');
+        document.getElementById('prevPokemon').disabled = true;
     }
 }
 

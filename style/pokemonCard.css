@@ -11,6 +11,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
     z-index: 1;
+    overflow: none;
 }
 
 #pokemonCard {
@@ -25,13 +26,20 @@
     margin: 32px;
 }
 
-.navIcon {
+.navIconsContainer button {
+    border: none;
+    padding-block: 0;
+    padding-inline: 0;
+    padding: 10px;
+}
+
+.b-abled {
     background-color: rgba(253, 253, 253, 0.5);
     padding: 10px;
     border-radius: 40px;
 }
 
-.navIcon:hover {
+.b-abled:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -243,6 +251,15 @@
 }
 
 /* Pokemon Evolutin*/
+#pokemonEvolutionsContainer {
+    max-height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    overflow-y: scroll;
+    padding-right: 4px;
+}
 
 #evolutinContainer0 {
     display: flex;
@@ -250,7 +267,8 @@
     flex-direction: row-reverse;
     align-items: center;
     padding-left: 4%;
-    height: 120px;
+    height: 116px;
+    width: 100%;
 }
 
 #evolutinContainer0:hover {
@@ -265,7 +283,8 @@
     flex-direction: row;
     align-items: center;
     padding-right: 4%;
-    height: 120px;
+    height: 116px;
+    width: 100%;
 }
 
 #evolutinContainer1:hover {
@@ -280,10 +299,27 @@
     flex-direction: row-reverse;
     align-items: center;
     padding-left: 4%;
-    height: 120px;
+    height: 116px;
+    width: 100%;
 }
 
 #evolutinContainer2:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#evolutinContainer3 {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 4%;
+    height: 116px;
+    width: 100%;
+}
+
+#evolutinContainer3:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     cursor: pointer;
@@ -342,7 +378,7 @@
 }
 
 .b-disabled {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .b-disabled:hover {
@@ -401,11 +437,13 @@
         z-index: 2;
     }
 
-    .navIcon {
+    .navIconsContainer button {
         background-color: transparent;
-        padding: 4px;
-        border-radius: 40px;
-        height: 40px;
+        height: 70px;
+    }
+
+    .navIcon {
+        height: 50px;
     }
 }
 
@@ -625,18 +663,26 @@
         top: 220px;
     }
     #evolutinContainer0 {
-        height: 110px;
+        height: 104px;
     }
 
     #evolutinContainer1 {
-        height: 110px;
+        height: 104px;
     }
 
     #evolutinContainer2 {
-        height: 110px;
+        height: 104px;
+    }
+
+    #evolutinContainer3 {
+        height: 104px;
     }
 
     #pokemonMovesContainer {
+        max-height: 320px;
+    }
+
+    #pokemonEvolutionsContainer {
         max-height: 320px;
     }
 }
@@ -702,10 +748,6 @@
         font-size: 12px;
         margin-top: 6px;
     }
-
-    #pokemonMovesContainer {
-        max-height: 320px;
-    }
 }
 
 @media (max-height: 680px) {
@@ -729,7 +771,15 @@
         height: 100px;
     }
 
+    #evolutinContainer3 {
+        height: 100px;
+    }
+
     #pokemonMovesContainer {
+        max-height: 300px;
+    }
+
+    #pokemonEvolutionsContainer {
         max-height: 300px;
     }
 }

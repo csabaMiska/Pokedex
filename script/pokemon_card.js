@@ -3,10 +3,10 @@ async function loadPokemonCard(pokemonId) {
     await loadPokemons(pokemonId);
     await loadPokemonSpecies();
     showPokemonCard();
-    showPrevIcon(pokemonId);
-    showNextIcon(pokemonId);
-    hideFavoritPrevIcon();
-    hideFavoritNextIcon();
+    disabledPrevButton(pokemonId);
+    disabledNextButton(pokemonId);
+    disabledFavoritPrevButton();
+    disabledFavoritNextButton();
     renderPokemonsCard(pokemonId);
     loadPokemonInfos();
 }
@@ -37,12 +37,14 @@ function showPokemonCard() {
     pokemonCardContainer.classList.remove('d-none');
     pokemonCardContainer.classList.add('d-flex');
     pokemonCard.classList.add('a-scale-up');
+    document.body.style.overflow = 'hidden';
 }
 
 function hidePokemonCard() {
     pokemonCard.classList.remove('a-scale-up');
     pokemonCardContainer.classList.remove('d-flex');
     pokemonCardContainer.classList.add('d-none');
+    document.body.style.overflow = 'scroll';
 }
 
 //Load Pokemon Card Infos
@@ -147,14 +149,21 @@ function showFlavorText() {
 
 // Load Pokemon Evolution
 async function loadPokemonEvolutions() {
+    generatePokemonEvolutionsContainer();
     evolutionPokemons = []; // Empty Pokemon Evolution Array
     await loadPokemonEvolution(); // Load Evolution API
     showPokemonEvolution(); // Load Current Pokemon Evolution
     renderPokemonEvolution(); // Render Pokemon Evolution
 }
 
-async function renderPokemonEvolution() {
+function generatePokemonEvolutionsContainer() {
     pokemonCardInfoContainer.innerHTML = '';
+    pokemonCardInfoContainer.innerHTML = '<div id="pokemonEvolutionsContainer"> </div>';
+}
+
+async function renderPokemonEvolution() {
+    let pokemonEvolutionsContainer = document.getElementById('pokemonEvolutionsContainer');
+    pokemonEvolutionsContainer.innerHTML = '';
     for (let i = 0; i < evolutionPokemons.length; i++) {
         const evolutionPokemon = evolutionPokemons[i];
         const evolutionPokemonName = capitalizeFirstLetter(evolutionPokemon);
@@ -162,7 +171,7 @@ async function renderPokemonEvolution() {
         const evolutionPokemonId = currentPokemon['id']; // Load Pokemon ID to onclik
         const evolutionPokemonImage = showPokemonImage();
         let e = i + 1; // e = number of Pokemon Evolutin 
-        pokemonCardInfoContainer.innerHTML += generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e);
+        pokemonEvolutionsContainer.innerHTML += generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e);
     }
 }
 

@@ -41,8 +41,8 @@
 
     <div id="pokemonCardContainer" class="pokemonCardContainer d-none" onclick="hidePokemonCard()">
         <div id="prevContainer" onclick="stopPropagation(event)" class="navIconsContainer">
-            <img id="prevPokemon" src="img/icons/prev.png" onclick="prevPokemon()" class="navIcon" alt="prevPokemon">
-            <img id="prevFavoritPokemon" src="img/icons/prev.png" onclick="prevFavoritPokemon()" class="navIcon d-none" alt="prevPokemon">
+            <button id="prevPokemon" onclick="prevPokemon()" class="b-abled" alt="prevPokemon"><img src="img/icons/prev.png" class="navIcon"></button>
+            <button id="prevFavoritPokemon" onclick="prevFavoritPokemon()" class="b-abled d-none" alt="prevPokemon"><img src="img/icons/prev.png" class="navIcon"></button>
         </div>
         <div id="pokemonCard" onclick="stopPropagation(event)" style="background-color: white">
             <div id="pokemonCardNav">
@@ -73,8 +73,8 @@
             </div>
         </div>
         <div id="nextContainer" onclick="stopPropagation(event)" class="navIconsContainer">
-            <img id="nextPokemon" src="img/icons/next.png" onclick="nextPokemon()" class="navIcon" alt="nextPokemon">
-            <img id="nextFavoritPokemon" src="img/icons/next.png" onclick="nextFavoritPokemon()" class="navIcon d-none" alt="nextPokemon">
+            <button id="nextPokemon" onclick="nextPokemon()" class="b-abled" alt="nextPokemon"><img src="img/icons/next.png" class="navIcon"></button>
+            <button id="nextFavoritPokemon" onclick="nextFavoritPokemon()" class="b-abled d-none" alt="nextPokemon"><img src="img/icons/next.png" class="navIcon"></button>
         </div>
     </div>
 
