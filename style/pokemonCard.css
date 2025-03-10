@@ -251,68 +251,28 @@
     padding-right: 4px;
 }
 
-#evolutinContainer0 {
+.evolutinContainer {
     display: flex;
+    align-items: center;
+    height: 116px;
+    width: 100%;
+    padding: 0 4%;
+    cursor: pointer;
+}
+
+.evolutinContainer:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+.evolutinContainerLeft {
     justify-content: start;
     flex-direction: row-reverse;
-    align-items: center;
-    padding-left: 4%;
-    height: 116px;
-    width: 100%;
 }
 
-#evolutinContainer0:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-#evolutinContainer1 {
-    display: flex;
+.evolutinContainerRight {
     justify-content: end;
     flex-direction: row;
-    align-items: center;
-    padding-right: 4%;
-    height: 116px;
-    width: 100%;
-}
-
-#evolutinContainer1:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-#evolutinContainer2 {
-    display: flex;
-    justify-content: start;
-    flex-direction: row-reverse;
-    align-items: center;
-    padding-left: 4%;
-    height: 116px;
-    width: 100%;
-}
-
-#evolutinContainer2:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-#evolutinContainer3 {
-    display: flex;
-    justify-content: end;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 4%;
-    height: 116px;
-    width: 100%;
-}
-
-#evolutinContainer3:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    cursor: pointer;
 }
 
 .evolutionHeadlineContainer {

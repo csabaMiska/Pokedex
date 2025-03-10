@@ -19,7 +19,6 @@ let pokemonCardContainer = document.getElementById('pokemonCardContainer');
 let pokemonCard = document.getElementById('pokemonCard');
 let pokemonCardNav = document.getElementById('pokemonCardNav');
 let pokemonCardInfoContainer = document.getElementById('pokemonCardInfoContainer');
-let pokemonEvolutionsContainer = document.getElementById('pokemonEvolutionsContainer');
 
 // Loading API und JSON
 async function loadPokemons(i) { // Loading Current Pokemon
@@ -43,6 +42,7 @@ async function loadPokemonSpecies() { // Load Pokemon Species
 }
 
 async function loadPokemonEvolution() { // Load Pokemon Evolutions
+    let pokemonEvolutionsContainer = document.getElementById('pokemonEvolutionsContainer');
     let spinner = document.createElement('div');
     spinner.classList.add('spinner');
     pokemonEvolutionsContainer.appendChild(spinner);

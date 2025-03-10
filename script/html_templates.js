@@ -92,10 +92,12 @@ function generateFlavorText(flavorText) {
             </div>`;
 }
 
-function generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e) {
-    return `<div onclick=loadPokemonCard(${evolutionPokemonId}) id="evolutinContainer${i}">
+function generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, index, evolutionStep) {
+    let directionClass = index % 2 === 0 ? 'evolutinContainerLeft' : 'evolutinContainerRight'; // Váltakozó osztály
+
+    return `<div onclick="loadPokemonCard(${evolutionPokemonId})" class="evolutinContainer ${directionClass}">
                 <div class="evolutionHeadlineContainer">
-                    <p class="evolutionText">${e}. Evolution</p>
+                    <p class="evolutionText">${evolutionStep}. Evolution</p>
                     <h3>${evolutionPokemonName}</h3>
                 </div>
                 <img class="evolutinBild" src="${evolutionPokemonImage}" alt="Pokemon Image">

@@ -170,8 +170,10 @@ async function renderPokemonEvolution() {
         await loadPokemons(evolutionPokemon);
         const evolutionPokemonId = currentPokemon['id']; // Load Pokemon ID to onclik
         const evolutionPokemonImage = showPokemonImage();
-        let e = i + 1; // e = number of Pokemon Evolutin 
-        pokemonEvolutionsContainer.innerHTML += generatePokemonEvolution(evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, e);
+        let evolutionStep = i + 1; ; // e = number of Pokemon Evolutin 
+        pokemonEvolutionsContainer.innerHTML += generatePokemonEvolution(
+            evolutionPokemonName, evolutionPokemonImage, evolutionPokemonId, i, evolutionStep
+        );
     }
 }
 
