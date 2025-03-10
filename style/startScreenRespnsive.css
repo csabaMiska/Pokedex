@@ -1,0 +1,383 @@
+@media (max-width: 1706px) {
+    .startCard {
+        height: 240px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 1170px) {
+    #startHeader {
+        height: 140px;
+    }
+
+    .pokemonLogo {
+        height: 110px;
+    }
+
+    #startDesign {
+        margin-top: -20px;
+    }
+}
+
+@media (max-width: 1110px) {
+    #startSearch {
+        width: 240px;
+    }
+}
+
+@media (max-width: 1060px) {
+    #startHeader {
+        height: 232px;
+    }
+
+    #startHeadline {
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .startNav {
+        margin-top: 12px;
+        width: 100%;
+        justify-content: space-between !important;
+    }
+
+    #startSearch {
+        width: 300px;
+    }
+
+    #startDesign {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 966px) {
+    #startContent {
+        gap: 10px;
+    }
+
+    .startCard {
+        height: 220px;
+        width: 270px;
+        background-size: 160px;
+        margin: 4px;
+    }
+
+    .startCardImage {
+        height: 90%;
+    }
+}
+
+@media (max-width: 760px) {
+    #startSearch {
+        width: 240px;
+    }
+}
+
+@media (max-width: 700px) {
+    #startHeader {
+        height: 132px;
+    }
+
+    #startDesign {
+        height: 56px;
+        margin-top: -40px;
+    }
+
+    #startHeadline {
+        flex-direction: row;
+        align-items: end;
+        padding-left: 40px;
+        padding-right: 70px;
+    }
+
+    .startNav {
+        flex-direction: column;
+        align-items: end;
+        z-index: 2;
+    }
+
+    .startNavLink {
+        padding-right: 8px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .startNavIcon {
+        width: 30px;
+    }
+}
+
+@media (max-width: 630px) {
+    #startHeader {
+        height: 120px;
+    }
+
+    #startHeadline {
+        padding-right: 60px;
+    }
+
+    .pokemonLogo {
+        height: 100px;
+    }
+}
+
+@media (max-width: 574px) {
+    #startHeader {
+        height: 112px;
+    }
+
+    .pokemonLogo {
+        height: 90px;
+    }
+
+    #startContent {
+        margin-left: 2px;
+        margin-right: 2px;
+        gap: 8px;
+    }
+
+    .startCard {
+        height: 210px;
+        width: 260px;
+    }
+
+    .startCardImage {
+        height: 80%;
+        width: 80%;
+    }
+
+    .startCardHeadline {
+        font-size: 24px;
+    }
+
+    .noFoundScreen {
+        height: 60vh;
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 550px) {
+    #startHeadline {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #startSearch {
+        width: 180px;
+    }
+
+    .startCard {
+        height: 190px;
+        width: 240px;
+        background-size: 140px;
+    }
+
+    .startCardTypes {
+        font-size: 12px;
+        width: 60px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .startCardId {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 510px) {
+    #startHeader {
+        height: 102px;
+    }
+
+    #startDesign {
+        height: 40px;
+        margin-top: -34px;
+    }
+
+    .pokemonLogo {
+        height: 80px;
+    }
+
+    #startSearch {
+        height: 20px;
+        width: 160px;
+        font-size: 14px;
+        border: 2px solid rgb(255, 204, 1);
+    }
+    
+    #startSearch:hover {
+        outline: 2px solid rgb(39, 116, 186);
+    }
+
+    #startSearch:focus {
+        outline: 2px solid rgb(39, 116, 186);
+    }
+
+    .startCard {
+        height: 170px;
+        width: 220px;
+        background-size: 130px;
+    }
+}
+
+@media (max-width: 470px) {
+    #startHeader {
+        height: 90px;
+    }
+
+    .pokemonLogo {
+        height: 70px;
+    }
+
+    .startNavIcon {
+        width: 25px;
+    }
+
+    .startCard {
+        width: 190px;
+        background-size: 110px;
+    }
+
+    .startCardHeadline {
+        font-size: 18px;
+    }
+
+    .startCardTypes {
+        font-size: 10px;
+        width: 50px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .noFoundScreen {
+        height: 70vh;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 440px) {
+    #startHeader {
+        height: 88px;
+    }
+
+    #startHeadline {
+        padding-left: 20px;
+        padding-right: 24px;
+    }
+
+    .pokemonLogo {
+        height: 60px;
+    }
+
+    .startNavIcon {
+        width: 22px;
+    }
+
+    #startSearch {
+        width: 150px;
+    }
+
+    #startDesign {
+        height: 44px;
+        margin-top: -28px;
+    }
+}
+
+@media (max-width: 410px) {
+    #startHeader {
+        height: 82px;
+    }
+
+    #startHeadline {
+        padding-left: 10px;
+        padding-right: 24px;
+    }
+
+    #startDesign {
+        height: 36px;
+    }
+
+    .pokemonLogo {
+        height: 60px;
+    }
+
+    .startNavIcon {
+        width: 20px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    #startSearch {
+        width: 140px;
+    }
+/* 
+    .startCard {
+        height: 240px;
+        width: 320px;
+        background-size: 180px;
+    }
+
+    .startCardId {
+        font-size: 20px !important;
+    }
+
+    .startCardHeadline {
+        font-size: 30px;
+    }
+
+    .startCardImage {
+        height: 100%;
+        width: 90%;
+    } */
+
+    .startCardTypes {
+        width: 80px !important;
+        margin-bottom: 16px !important;
+        font-size: 16px;
+    }
+
+    .noFoundScreen {
+        height: 70vh;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 390px) {
+    #startHeader {
+        height: 80px;
+    }
+
+    .pokemonLogo {
+        height: 50px;
+    }
+
+    #startSearch {
+        width: 140px;
+    }
+}
+
+@media (max-width: 350px) {
+    #startHeader {
+        height: 82px;
+    }
+
+    #startHeadline {
+        align-items: center;
+    }
+
+    #startDesign {
+        height: 40px;
+    }
+
+    .pokemonLogo {
+        height: 40px;
+    }
+
+    #startSearch {
+        width: 130px;
+    }
+}

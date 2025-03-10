@@ -1,0 +1,390 @@
+@media (max-width: 707px) {
+    .navIconsContainer {
+        margin: 24px;
+    }
+}
+
+@media (max-width: 676px) {
+    .navIconsContainer {
+        margin: 16px;
+    }
+}
+
+@media (max-width: 647px) {
+    .navIconsContainer {
+        margin: 8px;
+    }
+}
+
+@media (max-width: 617px) {
+    #prevContainer {
+        position: absolute;
+        top: 400px;
+        left: 100px;
+        z-index: 2;
+    }
+
+    #nextContainer {
+        position: absolute;
+        top: 400px;
+        right: 100px;
+        z-index: 2;
+    }
+
+    .navIconsContainer button {
+        background-color: transparent;
+        height: 70px;
+    }
+
+    .navIcon {
+        height: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    #prevContainer {
+        left: 90px;
+    }
+
+    #nextContainer {
+        right: 90px;
+    }
+}
+
+@media (max-width: 580px) {
+    #prevContainer {
+        left: 80px;
+    }
+
+    #nextContainer {
+        right: 80px;
+    }
+}
+
+@media (max-width: 560px) {
+    #prevContainer {
+        left: 70px;
+    }
+
+    #nextContainer {
+        right: 70px;
+    }
+}
+
+@media (max-width: 540px) {
+    #prevContainer {
+        left: 60px;
+    }
+
+    #nextContainer {
+        right: 60px;
+    }
+}
+
+@media (max-width: 520px) {
+    #prevContainer {
+        left: 50px;
+    }
+
+    #nextContainer {
+        right: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    #prevContainer {
+        left: 50px;
+    }
+
+    #nextContainer {
+        right: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #prevContainer {
+        left: 35px;
+    }
+
+    #nextContainer {
+        right: 35px;
+    }
+}
+
+@media (max-width: 460px) {
+    #prevContainer {
+        left: 25px;
+    }
+
+    #nextContainer {
+        right: 25px;
+    }
+}
+
+@media (max-width: 440px) {
+    #prevContainer {
+        left: 10px;
+    }
+
+    #nextContainer {
+        right: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    #prevContainer {
+        left: 0;
+    }
+
+    #nextContainer {
+        right: 0;
+    }
+
+    #pokemonCard {
+        width: 100vb;
+        height: 100vh;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    #pokemonCardNav {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    #pokemonCardInfo {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .statsName {
+        width: 65px;
+    }
+
+    #progressBarContainer {
+        width: 180px;
+    }
+
+    #pokemonCardInfoNav a {
+        font-size: 14px;
+    }
+
+    .evolutinBild {
+        height: 80%;
+    }
+}
+
+@media (max-width: 340px) {
+    #progressBarContainer {
+        width: 160px;
+    }
+
+    #pokemonCardName {
+        font-size: 28px;
+    }
+
+    #pokemonCardHeadline p {
+        font-size: 18px;
+    }
+
+    #pokemonCardImage {
+        height: 90%;
+    }
+
+    .evolutinBild {
+        height: 70%;
+    }
+}
+
+/* Vertical */
+@media (max-height: 835px) {
+    #pokemonCardNav {
+        height: 6%
+    }
+
+    #pokemonCardHeadline {
+        margin-top: 24px;
+    }
+
+    #pokemonCardInfoNav {
+        padding-top: 4%;
+    }
+
+    #pokemonCardInfoContainer {
+        margin-top: 8px;
+        padding-bottom: 16px;
+    }
+
+    #prevContainer {
+        top: 260px;
+    }
+
+    #nextContainer {
+        top: 260px;
+    }
+}
+
+@media (max-height: 790px) {
+    #prevContainer {
+        top: 230px;
+    }
+
+    #nextContainer {
+        top: 230px;
+    }
+}
+
+@media (max-height: 750px) {
+    #pokemonCardHeadline {
+        margin-top: 16px;
+    }
+
+    #pokemonCardInfoNav {
+        padding-top: 2%;
+    }
+
+    #pokemonCardInfoContainer {
+        padding-bottom: 8px;
+    }
+
+    #prevContainer {
+        top: 220px;
+    }
+
+    #nextContainer {
+        top: 220px;
+    }
+    #evolutinContainer0 {
+        height: 104px;
+    }
+
+    #evolutinContainer1 {
+        height: 104px;
+    }
+
+    #evolutinContainer2 {
+        height: 104px;
+    }
+
+    #evolutinContainer3 {
+        height: 104px;
+    }
+
+    #pokemonMovesContainer {
+        max-height: 320px;
+    }
+
+    #pokemonEvolutionsContainer {
+        max-height: 320px;
+    }
+}
+
+@media (max-height: 730px) {
+    #pokemonCardHeadline {
+        margin-top: 8px;
+    }
+
+    #pokemonCardInfoContainer {
+        padding-bottom: 4px;
+    }
+
+    #prevContainer {
+        top: 230px;
+    }
+
+    #nextContainer {
+        top: 230px;
+    }
+}
+
+@media (max-height: 720px) {
+    #prevContainer {
+        top: 200px;
+    }
+
+    #nextContainer {
+        top: 200px;
+    }
+
+    .wideColumn {
+        font-size: 14px;
+    }
+
+    .secondColum {
+        font-size: 14px;
+    }
+
+    .customTable td {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .statsName {
+        font-size: 14px;
+    }
+
+    .statsValue {
+        font-size: 14px;
+    }
+
+    #pokemonProgressBar {
+        height: 30px;
+    }
+
+    .flavorHeadline {
+        margin-top: 6px;
+        font-size: 14px;
+    }
+
+    .flavorText {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+}
+
+@media (max-height: 680px) {
+    #prevContainer {
+        top: 180px;
+    }
+
+    #nextContainer {
+        top: 180px;
+    }
+
+    #evolutinContainer0 {
+        height: 100px;
+    }
+
+    #evolutinContainer1 {
+        height: 100px;
+    }
+
+    #evolutinContainer2 {
+        height: 100px;
+    }
+
+    #evolutinContainer3 {
+        height: 100px;
+    }
+
+    #pokemonMovesContainer {
+        max-height: 300px;
+    }
+
+    #pokemonEvolutionsContainer {
+        max-height: 300px;
+    }
+}
+
+@media (max-height: 650px) {
+    
+    #prevContainer {
+        top: 180px;
+    }
+
+    #nextContainer {
+        top: 180px;
+    }
+}

@@ -19,12 +19,19 @@ let pokemonCardContainer = document.getElementById('pokemonCardContainer');
 let pokemonCard = document.getElementById('pokemonCard');
 let pokemonCardNav = document.getElementById('pokemonCardNav');
 let pokemonCardInfoContainer = document.getElementById('pokemonCardInfoContainer');
+let pokemonEvolutionsContainer = document.getElementById('pokemonEvolutionsContainer');
 
 // Loading API und JSON
 async function loadPokemons(i) { // Loading Current Pokemon
+    let spinner = document.createElement('div');
+    spinner.classList.add('spinner');
+    startContent.appendChild(spinner);
+
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     let response = await fetch(url);
     currentPokemon = await response.json();
+
+    startContent.removeChild(spinner);
     //console.log('Response is', currentPokemon); // Console.log
 }
 
@@ -36,9 +43,15 @@ async function loadPokemonSpecies() { // Load Pokemon Species
 }
 
 async function loadPokemonEvolution() { // Load Pokemon Evolutions
+    let spinner = document.createElement('div');
+    spinner.classList.add('spinner');
+    pokemonEvolutionsContainer.appendChild(spinner);
+
     let url = currentPokemonEgg['evolution_chain']['url'];
     let response = await fetch(url);
     currentPokemonEvolution = await response.json();
+
+    pokemonEvolutionsContainer.removeChild(spinner);
     //console.log('This is Evolution', currentPokemonEvolution); // Console Log
 }
 
@@ -50,9 +63,15 @@ async function loadBackgroundColors() { // JSON für die variebile Background Co
 }
 
 async function loadSearchPokemonNames() { // JSON für die variebile Background Colors
+    let spinner = document.createElement('div');
+    spinner.classList.add('spinner');
+    startContent.appendChild(spinner);
+
     let src = 'json/pokemonNames.json';
     let response = await fetch(src);
     searchPokemonNames = await response.json();
+
+    startContent.removeChild(spinner);
     // console.log('Pokemon Names', searchPokemonNames); // Console.log
 }
 
@@ -69,12 +88,15 @@ function loadStartScreen() { // Limits the loaded Pokemos of 18 and pushed on Ar
             loadedPokemons.push(i);
         }
     }
-    renderStartScreen();
+    renderStartScreen(false);
 }
 
-async function renderStartScreen() { // Render the Start Screen Pokemon Cards
-    startContent.innerHTML = '';
-    for (let i = 0; i < loadedPokemons.length; i++) {
+async function renderStartScreen(append = false) { // Render the Start Screen Pokemon Cards
+    if (!append) {
+        startContent.innerHTML = ''; 
+    }
+
+    for (let i = startContent.children.length; i < loadedPokemons.length; i++) {
         let pokemonId = loadedPokemons[i] + 1; // n - number of pokemon
         await loadPokemons(pokemonId);
         showPokemonInfo(pokemonId);
@@ -94,8 +116,16 @@ function showPokemonInfo(pokemonId) {
 
 // Load More Pokemon
 function loadMorePokemons() {
+    let prevScrollY = window.scrollY;
     loadedPokemon += 20;
-    loadStartScreen();
+    for (let i = loadedPokemons.length; i < loadedPokemon; i++) {
+        if (!loadedPokemons.includes(i)) {
+            loadedPokemons.push(i);
+        }
+    }
+
+    renderStartScreen(true);
+    window.scrollTo(0, prevScrollY);
 }
 
 // Prev & Next Pokemon
@@ -169,20 +199,29 @@ function loadfavoritPokemonsAsText() {
 }
 
 //Search Pokemon 
-function filterPokemons() {
-    let startSearch = document.getElementById('startSearch').value;
-    startSearch = startSearch.toLowerCase();
-    for (let i = 0; i < searchPokemonNames.length; i++) {
-        let pokemonName = searchPokemonNames[i]['name'];
-        let pokemonId = searchPokemonNames[i]['id'];
-        pokemonName = pokemonName.toLowerCase();
-        if (startSearch.length > 2 && pokemonName.includes(startSearch)) {
-            startContent.innerHTML = '';
-            renderSearchPokemons(pokemonId);
-        } if (startSearch.length < 3) {
-            startContent.innerHTML = `<div class="noFoundScreen">No Pokémon Found...</div>`;
-            hideNavButtons();
-        }
+async function filterPokemons() {
+    let startSearch = document.getElementById('startSearch').value.toLowerCase();
+    startContent.innerHTML = ''; // Előző keresési eredmények törlése
+
+    if (startSearch.length = 0) {
+        startContent.innerHTML = `<div class="noFoundScreen">No Pokémon Found...</div>`;
+        hideNavButtons();
+        return;
+    }
+
+    let foundPokemons = searchPokemonNames.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(startSearch)
+    );
+
+    if (foundPokemons.length === 0) {
+        startContent.innerHTML = `<div class="noFoundScreen">No Pokémon Found...</div>`;
+        hideNavButtons();
+        return;
+    }
+
+    for (let i = 0; i < foundPokemons.length; i++) {
+        let pokemonId = foundPokemons[i].id;
+        await renderSearchPokemons(pokemonId);
     }
 }
 
